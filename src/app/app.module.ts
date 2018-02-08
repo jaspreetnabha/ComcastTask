@@ -7,16 +7,19 @@ import { UtilityService} from './shared/services/utility.service';
 
 import { AppComponent } from './app.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
+import { TransformDataComponent } from './transform-data/transform-data.component';
 
 const appRoutes: Routes = [
-  { path: 'showdetails', component: ShowDetailsComponent }
+  { path: 'showdetails', component: ShowDetailsComponent },
+  { path: 'transformData', component: TransformDataComponent }
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowDetailsComponent
+    ShowDetailsComponent,
+    TransformDataComponent
   ],
   imports: [
     BrowserModule,

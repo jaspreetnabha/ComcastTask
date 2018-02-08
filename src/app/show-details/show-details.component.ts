@@ -31,7 +31,7 @@ export class ShowDetailsComponent implements OnInit {
 showData() {
   this.getDataService.getData()
     .subscribe(data =>  {
-        console.log(data);
+        //console.log(data);
         this.Items = <any>data;
       });
   }
