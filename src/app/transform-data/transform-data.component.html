@@ -10,10 +10,10 @@
       </thead>
       <tbody>
           <tr *ngFor="let item of Items">
-              <td>{{item.name }}</td>
-              <td>{{item.C1  }}  </td>
-              <td>{{item.C2  }}</td>
-              <td>{{item.C3 }}</td>
+              <td>{{item.name | default:' - '}}</td>
+              <td>{{item.C1  | default:' - '}}  </td>
+              <td>{{item.C2  | default:' - '}}</td>
+              <td>{{item.C3 | default:' - '}}</td>
           </tr>
       </tbody>
   </table> 

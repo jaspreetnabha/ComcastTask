@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { GetDataService } from './shared/services/get-data.service'
 import { HttpClientModule } from '@angular/common/http'; 
@@ -14,12 +14,28 @@ const appRoutes: Routes = [
   { path: 'transformData', component: TransformDataComponent }
 ];
 
+@Pipe({
+  name : "default"
+})
+class DefaultPipe  {
+  transform(value:string,fallback:string) {
+    let colValue = '';
+    if(value){
+      colValue = value;
+    }else{
+      colValue = fallback;
+    }
+    return colValue ; 
+  }
+}
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowDetailsComponent,
-    TransformDataComponent
+    TransformDataComponent,
+    DefaultPipe
   ],
   imports: [
     BrowserModule,
