@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { GetDataService } from './shared/services/get-data.service'
 import { HttpClientModule } from '@angular/common/http'; 
+import { UtilityService} from './shared/services/utility.service';
 
 import { AppComponent } from './app.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [GetDataService],
+  providers: [GetDataService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
