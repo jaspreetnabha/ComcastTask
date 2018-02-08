@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs/Rx';
+import{ Item,GetDataService} from '../shared/services/get-data.service';
 
 @Component({
   selector: 'app-show-details',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowDetailsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private getDataService: GetDataService) { }
+  
+  Items:Item [];
+  
   ngOnInit() {
+    this.showData();
   }
-
+  
+  showData() {
+  this.getDataService.getData()
+    .subscribe(data =>  {
+        console.log(data);
+        this.Items = <any>data;
+      });
+  }
 }
